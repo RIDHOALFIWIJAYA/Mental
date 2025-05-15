@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental</title>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md fixed top-0 w-full z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-600 dark:text-white hover:rotate-12 transition-transform">Mental</h1>
+
+      <!-- Menu button (mobile) -->
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-2xl text-gray-700 dark:text-white">&#9776;</button>
+      </div>
+
+      <!-- Navigation links (desktop) -->
+      <ul class="hidden md:flex space-x-6" id="navLinks">
+        <li><a href="#home" class="hover:text-indigo-500 font-semibold transition-all">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-500 font-semibold transition-all">Tentang</a></li>
+        <li><a href="#contact" class="hover:text-indigo-500 font-semibold transition-all">Hubungi</a></li>
+      </ul>
+
+      <!-- Dark mode toggle (desktop) -->
+      <div class="hidden md:block">
+        <button id="darkToggle" class="text-xl hover:text-yellow-400 transition" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <ul class="space-y-2">
+        <li><a href="#home" class="block hover:text-indigo-500 font-semibold">Home</a></li>
+        <li><a href="#about" class="block hover:text-indigo-500 font-semibold">Tentang</a></li>
+        <li><a href="#contact" class="block hover:text-indigo-500 font-semibold">Hubungi</a></li>
+        <li><button id="darkToggleMobile" class="text-left w-full mt-2 hover:text-yellow-400">🌙 Dark Mode</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home -->
+  <section id="home" class="min-h-screen flex items-center justify-center text-center px-6 pt-28 bg-white dark:bg-gray-800">
+    <div>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-indigo-700 dark:text-yellow-300">Helloworld</h2>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-700 dark:text-gray-300">
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia neque provident animi at, rem velit! Explicabo molestias neque laboriosam nesciunt?
+      </p>
+      <a href="#contact" class="mt-8 inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-full transition">
+        Hubungi Kami
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-indigo-600 dark:text-yellow-300 mb-6">Tentang Kami</h2>
+      <p class="text-gray-700 dark:text-gray-300 text-lg max-w-3xl mx-auto">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eaque, corporis ullam placeat dolores sed explicabo nulla iure voluptatem odio.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-8">
+        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
+          <a href="test1.html">
+          <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">Apasih kesehatan mental?</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
+          </a>
+        </div>
+        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
+          <a href="test2.html">
+          <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">lorem ipsum2</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
+          </a>
+        </div>
+        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
+          <a href="test3.html">
+          <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">lorem ipsum3</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
+          </a>
+        </div>
+        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
+          <a href="test4.html">
+          <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">lorem ipsum4</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
+          </a>
+        </div>
+        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
+           <a href="test4.html">
+          <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">lorem ipsum5</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 pt-20 bg-gradient-to-b from-purple-100 to-pink-100 dark:from-gray-800 dark:to-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-indigo-700 dark:text-yellow-300 mb-6">Hubungi Kami</h2>
+      <a href="https://wa.me/qr/NRZ2TAHYI5KYI1"
+         target="_blank"
+         class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition">
+        <i class="fab fa-whatsapp text-xl"></i> Chat via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class=" dark:bg-gray-800 py-6  shadow-inner text-center text-gray-500 dark:text-gray-300 text-sm">
+    &copy; 2025 RIDHO ALFI WIJAYA.
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const html = document.documentElement;
+    const darkToggle = document.getElementById('darkToggle');
+    const darkToggleMobile = document.getElementById('darkToggleMobile');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function toggleDarkMode() {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      if (darkToggle) darkToggle.textContent = isDark ? '🌞' : '🌙';
+      if (darkToggleMobile) darkToggleMobile.textContent = isDark ? '🌞 Light Mode' : '🌙 Dark Mode';
+    }
+
+    // Set initial theme
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+      if (darkToggle) darkToggle.textContent = '🌞';
+      if (darkToggleMobile) darkToggleMobile.textContent = '🌞 Light Mode';
+    }
+
+    // Event listeners
+    if (darkToggle) darkToggle.addEventListener('click', toggleDarkMode);
+    if (darkToggleMobile) darkToggleMobile.addEventListener('click', toggleDarkMode);
+    if (menuBtn) menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
