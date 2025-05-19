@@ -5,19 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mental</title>
 
+  <!-- Load Tailwind dulu -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Baru atur config -->
   <script>
     tailwind.config = {
       darkMode: 'class'
     }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
   </style>
 </head>
+
 <body class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
 
   <!-- Navbar -->
@@ -75,35 +82,46 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eaque, corporis ullam placeat dolores sed explicabo nulla iure voluptatem odio.
       </p>
       <div class="mt-10 flex flex-wrap justify-center gap-8">
-        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
+        <div data-aos="fade-right">
+        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-x-3 transition-transform cursor-pointer">
           <a href="test1.html">
           <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">Apasih kesehatan mental?</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
           </a>
         </div>
-        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
-          <a href="test2.html">
-          <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">lorem ipsum2</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
-          </a>
         </div>
-        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
+        <!--card2-->
+       <div data-aos="fade-right">
+        <div class="transform bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-x-3 transition-transform  cursor-pointer">
+            <a href="test2.html">
+            <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">lorem ipsum2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
+            </a>
+          </div>
+        </div>
+        <div data-aos="fade-right">
+        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-x-3 transition-transform cursor-pointer">
           <a href="test3.html">
           <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">lorem ipsum3</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
           </a>
         </div>
-        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
+        </div>
+        <div data-aos="fade-right">
+        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-x-3 transition-transform cursor-pointer">
           <a href="test4.html">
           <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">lorem ipsum4</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
           </a>
         </div>
-        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-y-3 transition-transform cursor-pointer">
+        </div>
+        <div data-aos="fade-right">
+        <div class="bg-indigo-50 dark:bg-gray-700 p-6 rounded-xl shadow-md max-w-sm hover:translate-x-3 transition-transform cursor-pointer">
            <a href="test4.html">
           <h3 class="font-semibold text-xl mb-2 text-indigo-700 dark:text-yellow-200">lorem ipsum5</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut voluptatibus commodi.</p>
           </a>
+        </div>
         </div>
       </div>
     </div>
@@ -126,7 +144,6 @@
     &copy; 2025 RIDHO ALFI WIJAYA.
   </footer>
 
-  <!-- Script -->
   <script>
     const html = document.documentElement;
     const darkToggle = document.getElementById('darkToggle');
@@ -142,20 +159,27 @@
       if (darkToggleMobile) darkToggleMobile.textContent = isDark ? '🌞 Light Mode' : '🌙 Dark Mode';
     }
 
-    // Set initial theme
+    // Initial theme
     if (localStorage.getItem('theme') === 'dark') {
       html.classList.add('dark');
       if (darkToggle) darkToggle.textContent = '🌞';
       if (darkToggleMobile) darkToggleMobile.textContent = '🌞 Light Mode';
     }
 
-    // Event listeners
     if (darkToggle) darkToggle.addEventListener('click', toggleDarkMode);
     if (darkToggleMobile) darkToggleMobile.addEventListener('click', toggleDarkMode);
     if (menuBtn) menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
   </script>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false, // animasi hanya sekali
+    });
+    </script>
 
 </body>
 </html>
