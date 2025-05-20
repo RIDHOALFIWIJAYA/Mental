@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kesehatan Mental</title>
 
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       darkMode: 'class'
     }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
     body { font-family: 'Poppins', sans-serif; }
@@ -58,7 +60,7 @@
   <!-- Judul & Konten -->
   <section class="min-h-screen flex justify-center px-4 pt-28 bg-white dark:bg-gray-800">
     <div class="max-w-screen-lg w-full">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-indigo-700 dark:text-yellow-300 mt-10 text-center md:text-left">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-indigo-700 dark:text-yellow-300 mt-10 text-center md:text-left" data-aos="fade-right">
         Apasih kesehatan mental itu?
       </h2>
 
@@ -70,12 +72,12 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. At maiores asperiores ex, esse incidunt numquam laudantium doloremque, deserunt tempora, obcaecati recusandae. Voluptas eos velit et quaerat veniam quos molestiae, iusto quis rem ab soluta dolorem reiciendis, magni nulla fugit? Vitae architecto molestias excepturi hic ipsam aliquid totam consequatur odit quae veniam tempore dolores adipisci ab blanditiis sit perferendis eaque, iste similique dignissimos corrupti nam consequuntur.
         </p>
       </div>
-
+    
       <div class="mt-8 text-center md:text-left ml-0 md:ml-12">
         <a href="index.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold w-32 h-10 leading-10 rounded-full transition text-center">
           Kembali
         </a>
-      </div>
+      </div> 
     </div>
   </section>
 
@@ -109,5 +111,13 @@
       mobileMenu.classList.toggle('hidden');
     });
   </script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false, // animasi hanya sekali
+    });
+    </script>
 </body>
 </html>
