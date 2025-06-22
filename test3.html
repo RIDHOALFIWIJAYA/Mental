@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kesehatan Mental</title>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+  
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md fixed top-0 w-full z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-600 dark:text-white hover:rotate-12 transition-transform">Mental</h1>
+
+      <!-- Menu button (mobile) -->
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-2xl text-gray-700 dark:text-white">&#9776;</button>
+      </div>
+
+      <!-- Navigation links (desktop) -->
+      <ul class="hidden md:flex space-x-6" id="navLinks">
+        <li><a href="#home" class="hover:text-indigo-500 font-semibold transition-all">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-500 font-semibold transition-all">Tentang</a></li>
+        <li><a href="#contact" class="hover:text-indigo-500 font-semibold transition-all">Hubungi</a></li>
+      </ul>
+
+      <!-- Dark mode toggle (desktop) -->
+      <div class="hidden md:block">
+        <button id="darkToggle" class="text-xl hover:text-yellow-400 transition" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <ul class="space-y-2">
+        <li><a href="#home" class="block hover:text-indigo-500 font-semibold">Home</a></li>
+        <li><a href="#about" class="block hover:text-indigo-500 font-semibold">Tentang</a></li>
+        <li><a href="#contact" class="block hover:text-indigo-500 font-semibold">Hubungi</a></li>
+        <li><button id="darkToggleMobile" class="text-left w-full mt-2 hover:text-yellow-400">🌙 Dark Mode</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Judul & Konten -->
+  <section class="min-h-screen flex justify-center px-4 pt-28 bg-white dark:bg-gray-800">
+    <div class="max-w-screen-lg w-full">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-indigo-700 dark:text-yellow-300 mt-10 text-center md:text-left" data-aos="fade-right">
+        Apasih kesehatan mental itu?
+      </h2>
+
+      <div class="space-y-6 text-justify text-base sm:text-lg md:text-xl">
+        <p class="mx-0 md:mx-20">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At maiores asperiores ex, esse incidunt numquam laudantium doloremque, deserunt tempora, obcaecati recusandae. Voluptas eos velit et quaerat veniam quos molestiae, iusto quis rem ab soluta dolorem reiciendis, magni nulla fugit? Vitae architecto molestias excepturi hic ipsam aliquid totam consequatur odit quae veniam tempore dolores adipisci ab blanditiis sit perferendis eaque, iste similique dignissimos corrupti nam consequuntur.
+        </p>
+        <p class="mx-0 md:mx-20">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At maiores asperiores ex, esse incidunt numquam laudantium doloremque, deserunt tempora, obcaecati recusandae. Voluptas eos velit et quaerat veniam quos molestiae, iusto quis rem ab soluta dolorem reiciendis, magni nulla fugit? Vitae architecto molestias excepturi hic ipsam aliquid totam consequatur odit quae veniam tempore dolores adipisci ab blanditiis sit perferendis eaque, iste similique dignissimos corrupti nam consequuntur.
+        </p>
+      </div>
+
+      <div class="mt-8 text-center md:text-left ml-0 md:ml-12">
+        <a href="home.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold w-32 h-10 leading-10 rounded-full transition text-center">
+          Kembali
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script -->
+  <script>
+    const html = document.documentElement;
+    const darkToggle = document.getElementById('darkToggle');
+    const darkToggleMobile = document.getElementById('darkToggleMobile');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function toggleDarkMode() {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      if (darkToggle) darkToggle.textContent = isDark ? '🌞' : '🌙';
+      if (darkToggleMobile) darkToggleMobile.textContent = isDark ? '🌞 Light Mode' : '🌙 Dark Mode';
+    }
+
+    // Set initial theme
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+      if (darkToggle) darkToggle.textContent = '🌞';
+      if (darkToggleMobile) darkToggleMobile.textContent = '🌞 Light Mode';
+    }
+
+    // Event listeners
+    if (darkToggle) darkToggle.addEventListener('click', toggleDarkMode);
+    if (darkToggleMobile) darkToggleMobile.addEventListener('click', toggleDarkMode);
+    if (menuBtn) menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false, // animasi hanya sekali
+    });
+    </script>
+</body>
+</html>
