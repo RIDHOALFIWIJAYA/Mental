@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kesehatan Mental</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md fixed top-0 w-full z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-600 dark:text-white hover:rotate-12 transition-transform">Mental</h1>
+
+      <!-- Menu button (mobile) -->
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-2xl text-gray-700 dark:text-white">&#9776;</button>
+      </div>
+
+      <!-- Navigation links (desktop) -->
+      <ul class="hidden md:flex space-x-6" id="navLinks">
+        <li><a href="#home" class="hover:text-indigo-500 font-semibold transition-all">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-500 font-semibold transition-all">Tentang</a></li>
+        <li><a href="#contact" class="hover:text-indigo-500 font-semibold transition-all">Hubungi</a></li>
+      </ul>
+
+      <!-- Dark mode toggle (desktop) -->
+      <div class="hidden md:block">
+        <button id="darkToggle" class="text-xl hover:text-yellow-400 transition" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <ul class="space-y-2">
+        <li><a href="#home" class="block hover:text-indigo-500 font-semibold">Home</a></li>
+        <li><a href="#about" class="block hover:text-indigo-500 font-semibold">Tentang</a></li>
+        <li><a href="#contact" class="block hover:text-indigo-500 font-semibold">Hubungi</a></li>
+        <li><button id="darkToggleMobile" class="text-left w-full mt-2 hover:text-yellow-400">🌙 Dark Mode</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Judul & Konten -->
+  <section class="min-h-screen flex justify-center px-4 pt-28 bg-white dark:bg-gray-800">
+    <div class="max-w-screen-lg w-full flex flex-col">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-indigo-700 dark:text-yellow-300 mt-10 text-center md:text-left" data-aos="fade-right">
+        Tim kami
+      </h2>
+
+      <div class="flex flex-wrap sm:flex-row justify-center items-center gap-4 mt-10">
+        <div class="tim flex flex-col w-[350px] h-auto sm:w-[900px] sm:h-[600px] bg-gray-700 rounded-xl items-center pb-4 pt-4 mb-5">
+          <div class="m-4 relative w-[300px] h-[200px] sm:w-[850px] sm:h-[550px] overflow-hidden rounded-2xl shadow-lg">
+            <div class="slider flex transition-transform duration-700 ease-in-out">
+              <img src="gambar/wa1.jpg" class="w-full h-full object-cover flex-shrink-0" />
+              <img src="gambar/wa4.jpg" class="w-full h-full object-cover flex-shrink-0" />
+              <img src="gambar/wa5.jpg" class="w-full h-full object-cover flex-shrink-0" />
+              <img src="gambar/wa6.jpg" class="w-full h-full object-cover flex-shrink-0" />
+              <img src="gambar/wa7.jpg" class="w-full h-full object-cover flex-shrink-0" />
+              <img src="gambar/wa8.jpg" class="w-full h-full object-cover flex-shrink-0" />            </div>
+            <button class="prev absolute top-1/2 left-2 -translate-y-1/2 bg-sky-400 p-1 sm:p-2 rounded-full hover:bg-gray-900">◀</button>
+            <button class="next absolute top-1/2 right-2 -translate-y-1/2 bg-sky-400 p-1 sm:p-2 rounded-full hover:bg-gray-900">▶</button>
+          </div>
+          <a href="home.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold w-32 h-10 leading-10 rounded-full transition text-center mt-2">
+            Kembali
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script -->
+  <script>
+    const html = document.documentElement;
+    const darkToggle = document.getElementById('darkToggle');
+    const darkToggleMobile = document.getElementById('darkToggleMobile');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function toggleDarkMode() {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      if (darkToggle) darkToggle.textContent = isDark ? '🌞' : '🌙';
+      if (darkToggleMobile) darkToggleMobile.textContent = isDark ? '🌞 Light Mode' : '🌙 Dark Mode';
+    }
+
+    // Set initial theme
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+      if (darkToggle) darkToggle.textContent = '🌞';
+      if (darkToggleMobile) darkToggleMobile.textContent = '🌞 Light Mode';
+    }
+
+    // Event listeners
+    if (darkToggle) darkToggle.addEventListener('click', toggleDarkMode);
+    if (darkToggleMobile) darkToggleMobile.addEventListener('click', toggleDarkMode);
+    if (menuBtn) menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll(".tim").forEach((card) => {
+      const slider = card.querySelector(".slider");
+      const slides = card.querySelectorAll("img");
+      const prevBtn = card.querySelector(".prev");
+      const nextBtn = card.querySelector(".next");
+      let index = 0;
+
+      function showSlide(i) {
+        index = (i + slides.length) % slides.length;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      nextBtn.addEventListener("click", () => showSlide(index + 1));
+      prevBtn.addEventListener("click", () => showSlide(index - 1));
+      setInterval(() => showSlide(index + 1), 4000);
+    });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  </script>
+
+</body>
+</html>
